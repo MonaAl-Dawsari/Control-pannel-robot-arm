@@ -6,8 +6,6 @@ body {
 
   main{
     padding: 2% 38%;
-    font-family: 'Cairo', sans-serif;/*For this reason, it was used to retrieve fonts from Google*/
-    font-style: italic;
     color: rgb(204, 147, 62);
     font-size: 20px; 
     margin-top: auto;
@@ -69,7 +67,7 @@ button{
 }
   
 .save_button {
-  background-color: #F27935;
+  background-color: #336696;
 }
 .save_button .round {
 color: #23dbf3;
@@ -79,13 +77,11 @@ color: #23dbf3;
   background-color: #a0724f;
 }
 .run_button .round {
-  background-color: #23dbf3;
+  background-color: #f32323;
 }
 a {
   text-decoration: none;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border-radius: 30px;
+  
   padding: 12px 53px 12px 23px;
   color: #111;
   text-transform: uppercase;
@@ -103,24 +99,12 @@ a span {
   z-index: 3;
 }
 a .round {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  position: absolute;
-  right: 3px;
-  top: 3px;
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-  z-index: 2;
+ 
 }
 a .round i {
   position: absolute;
   top: 50%;
-  margin-top: -6px;
+  margin-top: -4px;
   left: 50%;
   margin-left: -4px;
   -moz-transition: all 0.3s;
@@ -131,15 +115,15 @@ a .round i {
 .txt {
   font-size: 14px;
   line-height: 1.45;
+  color: rgb(255, 255, 255);
 }
 
 .type-1 a:hover {
-  padding-left: 48px;
-  padding-right: 28px;
+  
 }
 .type-1 a:hover .round {
   
 }
 .type-1 a:hover .round i {
-  left: 12%;
+  
 }

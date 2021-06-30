@@ -26,7 +26,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 	$sql = "INSERT INTO `direction_and_motor_values` (`Forwards`, `Left`, `Right`, `Backwards`, `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('F', '', '', '', '', '', '', '', '', '');";
 
 	if ($conn->query($sql) === TRUE) {
-  	echo "New record created successfully";
+  	echo "تم بنجاح";
 	} else {
   	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -64,7 +64,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 	$sql = "INSERT INTO `direction_and_motor_values` (`date`,`Forwards`, `Left`, `Right`, `Backwards`, `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('$date','', '', '', '', '$motor_1_value', '$motor_2_value', '$motor_3_value', '$motor_4_value', '$motor_5_value', '$motor_6_value');";
       
       if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "تم بنجاح";
       } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
       }
@@ -75,7 +75,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 	//run
 	if (isset($_POST['run-submit'])) {
 	//The transmitter for the robot is assumed with the emergence of a movement model of the robot
-	echo("	Will be added soon if robots are available");			
+	echo("	تم التشغيل");			
 		}// run
 
 //This function stores the values in the database with taking the engine values.
@@ -96,7 +96,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 	$sql = "INSERT INTO `direction_and_motor_values` (`date`,`Forwards`, `Left`, `Right`, `Backwards`, `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('$date','$Forwards_value', '$Left_value', '$Right_value', '$Backwards_value', '$motor_1_value', '$motor_2_value', '$motor_3_value', '$motor_4_value', '$motor_5_value', '$motor_6_value');";
 
 	if ($conn->query($sql) === TRUE) {
-  	echo "New record created successfully";
+  	echo "تم بنجاح";
 	} else {
   	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -155,19 +155,19 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
 
 
-  <button class="type-1" type="button" name="save-submit" type="submit" name="save-submit" id="save-submit">
+  <button class="type-1 type="button" name="save-submit" type="submit" name="save-submit" id="save-submit">
     <a href="" class="save_button">
       <span class="txt">حفظ</span>
-      <span class="round"></span>
+      <span class="round"> </span>
     </a>
    </button>   
 
 
 
-   <button class="type-1" type="button" name="run-submit" type="submit" name="run-submit" id="run-submit">
+   <button class="type-1 type="button" name="run-submit" type="submit" name="run-submit" id="run-submit">
       <a href="" class="run_button">
       <span class="txt">تشغيل</span>
-      <span class="round"><i class="fa fa-chevron-right"></i></span>
+      <span class="round"></i></span>
     </a>
        </button>   
   </div>

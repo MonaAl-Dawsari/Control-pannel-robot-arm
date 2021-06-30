@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
-<title>response of IoT Control</title>
-    <main>Response control panel for Robots</main>
+<title>response</title>
+    <main>response page for the AI teams</main>
 <head>
 <link rel="stylesheet" href="styles.css"> <!-- to link css -->
 
@@ -23,7 +23,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
  }
- echo "Connected successfully, the response is :      ";
+ //echo "Connected successfully, the response is :      ";
 
 
  // write query for all pizzas
@@ -36,10 +36,10 @@ if (!$conn) {
  $direction_commands = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 //Print the last value found in the local database
-      echo ("<br />  Date and time:  ");
+      //echo ("<br />  Date and time:  ");
       //echo $direction_commands[count($direction_commands)-1]['date'];
 
-      echo ("<br />  Direction:  ");
+      //echo ("<br />  Direction:  ");
       echo $direction_commands[count($direction_commands)-1]['Forwards'];
       echo $direction_commands[count($direction_commands)-1]['Backwards'];
       echo $direction_commands[count($direction_commands)-1]['Right'];
