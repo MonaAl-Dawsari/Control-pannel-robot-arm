@@ -6,7 +6,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "Robot-arm-with-a-camera"; //Table : Direction_and_motor_values
+$db = "control_arm_panel"; //Table : motor_valuess
 
 //server name, user name , password , database
 $conn = mysqli_connect($servername, $username, $password,$db);
@@ -15,43 +15,12 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
  //To response page 
 
- 	//Forwards
- 	if (isset($_POST['Forwards-submit'])) { //Forwards-submit it is (name) in input
-	WritingToDatabase($conn,'Forwards', '', '', '', '', '', '', '', '', '');
-	
-	//No need for all this repetition, I wrote a function to shorten it all :)
-	//To achieve DRY(Don't repeat yourself) 
-	
-	
-	$sql = "INSERT INTO `direction_and_motor_values` (`Forwards`, `Left`, `Right`, `Backwards`, `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('F', '', '', '', '', '', '', '', '', '');";
-
-	if ($conn->query($sql) === TRUE) {
-  	echo "تم بنجاح";
-	} else {
-  	echo "Error: " . $sql . "<br>" . $conn->error;
-	}
-	
-	}
-	
-	//Left
-	if (isset($_POST['Left-submit'])) {
-		WritingToDatabase($conn,'', 'Left', '', '', '', '', '', '', '', '');
-		}
-
-	//Right
-	if (isset($_POST['Right-submit'])) {
-		WritingToDatabase($conn,'', '', 'Right', '', '', '', '', '', '', '');
-		}	
-
-	//Backwards
-	if (isset($_POST['Backwards-submit'])) {
-	WritingToDatabase($conn,'', '', '', 'Backwards', '', '', '', '', '', '');
-	}
+ 
 
 	//save
     if (isset($_POST['save-submit'])) {
 	//To take the date directly from the device used at its timing and not from the database
-	$date = date("Y/m/d h:i:sa");
+	
 
 	//To take the amount in the slider from 1 to 100
 	$motor_1_value = $_POST["motor_1"];
@@ -61,7 +30,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 	$motor_5_value = $_POST["motor_5"];
 	$motor_6_value = $_POST["motor_6"];
 
-	$sql = "INSERT INTO `direction_and_motor_values` (`date`,`Forwards`, `Left`, `Right`, `Backwards`, `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('$date','', '', '', '', '$motor_1_value', '$motor_2_value', '$motor_3_value', '$motor_4_value', '$motor_5_value', '$motor_6_value');";
+	$sql = "INSERT INTO `motor_valuess` ( `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ( '$motor_1_value', '$motor_2_value', '$motor_3_value', '$motor_4_value', '$motor_5_value', '$motor_6_value');";
       
       if ($conn->query($sql) === TRUE) {
         echo "تم بنجاح";
@@ -80,11 +49,11 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
 //This function stores the values in the database with taking the engine values.
 //It is an alternative to save, but with the movement
- function WritingToDatabase($conn, $Forwards_value, $Left_value, $Right_value, $Backwards_value, $motor_1_value, $motor_2_value, $motor_3_value, $motor_4_value, $motor_5_value, $motor_6_value) {
+ function WritingToDatabase($conn,  $motor_1_value, $motor_2_value, $motor_3_value, $motor_4_value, $motor_5_value, $motor_6_value) {
 
 	//To take the date directly from the device used at its timing and not from the database
 
-	$date = date("Y/m/d h:i:sa");
+	
 	//To take the amount in the slider from 1 to 180
 	$motor_1_value = $_POST["motor_1"];
 	$motor_2_value = $_POST["motor_2"];
@@ -93,7 +62,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 	$motor_5_value = $_POST["motor_5"];
 	$motor_6_value = $_POST["motor_6"];
 
-	$sql = "INSERT INTO `direction_and_motor_values` (`date`,`Forwards`, `Left`, `Right`, `Backwards`, `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('$date','$Forwards_value', '$Left_value', '$Right_value', '$Backwards_value', '$motor_1_value', '$motor_2_value', '$motor_3_value', '$motor_4_value', '$motor_5_value', '$motor_6_value');";
+	$sql = "INSERT INTO `motor_valuess` ( `motor_1`, `motor_2`, `motor_3`, `motor_4`, `motor_5`, `motor_6`) VALUES ('$motor_1_value', '$motor_2_value', '$motor_3_value', '$motor_4_value', '$motor_5_value', '$motor_6_value');";
 
 	if ($conn->query($sql) === TRUE) {
   	echo "تم بنجاح";

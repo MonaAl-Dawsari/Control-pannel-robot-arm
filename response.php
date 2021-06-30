@@ -14,7 +14,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "Robot-arm-with-a-camera";
+$db = "control_arm_panel";
 
 //server name, user name , password , database
 $conn = mysqli_connect($servername, $username, $password,$db);
@@ -27,7 +27,7 @@ if (!$conn) {
 
 
  // write query for all pizzas
- $sql_ui_control = 'SELECT * FROM `Direction_and_motor_values`';
+ $sql_ui_control = 'SELECT * FROM `motor_valuess`';
 
  // get the result set (set of rows)
  $result = mysqli_query($conn, $sql_ui_control);
@@ -40,10 +40,10 @@ if (!$conn) {
       //echo $direction_commands[count($direction_commands)-1]['date'];
 
       //echo ("<br />  Direction:  ");
-      echo $direction_commands[count($direction_commands)-1]['Forwards'];
-      echo $direction_commands[count($direction_commands)-1]['Backwards'];
-      echo $direction_commands[count($direction_commands)-1]['Right'];
-      echo $direction_commands[count($direction_commands)-1]['Left'];
+      //echo $direction_commands[count($direction_commands)-1]['Forwards'];
+      //echo $direction_commands[count($direction_commands)-1]['Backwards'];
+      //echo $direction_commands[count($direction_commands)-1]['Right'];
+      //echo $direction_commands[count($direction_commands)-1]['Left'];
 
       echo ("<br /> motor 1 : ");
       echo $direction_commands[count($direction_commands)-1]['motor_1'];
