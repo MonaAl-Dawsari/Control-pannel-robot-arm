@@ -123,6 +123,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
 <body>
 
+
 <div class="center">
 <h1>التحكم بالذراع الالي</h1>
 
@@ -132,19 +133,29 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
 
 
-<div class="slidecontainer">
-  <p>  محرك 1: <input name="motor_1" type="range" min="0" max="180" value="50">   </p>
-  <p>  محرك 2: <input name="motor_2" type="range" min="0" max="180" value="50">   </p>
-  <p>  محرك 3: <input name="motor_3" type="range" min="0" max="180" value="50">   </p>
-  <p>  محرك 4: <input name="motor_4" type="range" min="0" max="180" value="50">   </p>
-  <p>  محرك 5: <input name="motor_5" type="range" min="0" max="180" value="50">   </p>
-  <p>  محرك 6: <input name="motor_6" type="range" min="0" max="180" value="50">   </p>
+
+
+
+
+<div class="slidecontainer2">
+  <p>  محرك 1: <input class="slider slider1" id="myRange1" name="motor_1" type="range" min="0" max="180" value="50"> 
+  <span id="demo1"></span></p>
+  <p>  محرك 2: <input class="slider slider2" id="myRange2" name="motor_2" type="range" min="0" max="180" value="50">
+  <span id="demo2"></span> </p>
+  <p>  محرك 3: <input class="slider slider3" id="myRange3" name="motor_3" type="range" min="0" max="180" value="50">
+  <span id="demo3"></span>   </p>
+  <p>  محرك 4: <input class="slider slider4" id="myRange4" name="motor_4" type="range" min="0" max="180" value="50">
+  <span id="demo4"></span>   </p>
+  <p>  محرك 5: <input class="slider slider5" id="myRange5" name="motor_5" type="range" min="0" max="180" value="50">
+  <span id="demo5"></span>   </p>
+  <p>  محرك 6: <input class="slider slider6" id="myRange6" name="motor_6" type="range" min="0" max="180" value="50">
+  <span id="demo6"></span>   </p>
 
 <div class="type-1">  
 
 
 
-  <button class="type-1 type="button" name="save-submit" type="submit" name="save-submit" id="save-submit">
+  <button class="type-1" type="button" name="save-submit" type="submit" name="save-submit" id="save-submit">
     <a href="" class="save_button">
       <span class="txt">حفظ</span>
       <span class="round"></span>
@@ -153,7 +164,7 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
 
 
-   <button class="type-1 type="button" name="run-submit" type="submit" name="run-submit" id="run-submit">
+   <button class="type-1" type="button" name="run-submit" type="submit" name="run-submit" id="run-submit">
       <a href="" class="run_button">
       <span class="txt">تشغيل</span>
       <span class="round"><i class="fa fa-chevron-right"></i></span>
@@ -163,6 +174,92 @@ $conn = mysqli_connect($servername, $username, $password,$db);
 
 </div>
 </div>
+
+
+
+
+<script>
+var slider1 = document.getElementById("myRange1");
+var output1 = document.getElementById("demo1");
+output1.innerHTML = slider1.value;
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+}
+
+//start
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("demo2");
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+
+}
+//end
+
+
+//start
+var slider3 = document.getElementById("myRange3");
+var output3 = document.getElementById("demo3");
+output3.innerHTML = slider3.value;
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+
+}
+//end
+
+
+//start
+var slider3 = document.getElementById("myRange3");
+var output3 = document.getElementById("demo3");
+output3.innerHTML = slider3.value;
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+
+}
+//end
+
+
+//start
+var slider4 = document.getElementById("myRange4");
+var output4 = document.getElementById("demo4");
+output4.innerHTML = slider4.value;
+
+slider4.oninput = function() {
+  output4.innerHTML = this.value;
+
+}
+//end
+
+
+//start
+var slider5 = document.getElementById("myRange5");
+var output5 = document.getElementById("demo5");
+output5.innerHTML = slider5.value;
+
+slider5.oninput = function() {
+  output5.innerHTML = this.value;
+
+}
+//end
+
+
+//start
+var slider6 = document.getElementById("myRange6");
+var output6 = document.getElementById("demo6");
+output6.innerHTML = slider6.value;
+
+slider6.oninput = function() {
+  output6.innerHTML = this.value;
+
+}
+//end
+
+
+</script>
 
 </body>
 
